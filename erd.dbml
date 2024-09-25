@@ -1,0 +1,17 @@
+Table CargoShips {
+  id integer [primary key]
+  name string
+  haulerId integer [ref: > HaulerShips.id]
+}
+
+Table HaulerShips {
+  id integer [primary key]
+  name string
+  dockId integer [ref: > Docks.id]
+}
+
+Table Docks {
+  id integer [primary key]
+  location string
+  volume decimal
+}
