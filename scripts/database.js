@@ -25,6 +25,15 @@ const database = {
     ]
 }
 
-export const getDocks = () => {return database.docks}
-export const getHaulingShips = () => {return database.haulers}
-export const getShippingShips = () => {return database.shippingShips}
+export const getDocks = () => {
+    const constructedDocks = database.docks
+    return constructedDocks
+}
+export const getHaulingShips = () => {
+    const constructedHaulingShips = database.haulers
+    return constructedHaulingShips
+}
+export const getShippingShips = () => {
+    const constructedShippingShips = database.shippingShips
+    return constructedShippingShips
+}
