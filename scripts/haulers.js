@@ -6,16 +6,16 @@ const shippingShips = getShippingShips()
 document.addEventListener(
     "click",
     (theClickEvent) => {
-        const theClickedOnShip = theClickEvent.target
-        if (theClickedOnShip.dataset.variety === "hauler") {
-            const clickedHaulerID = theClickedOnShip.dataset.id
-            let shipCountIncrement = 0
+        const theClickedOnHauler = theClickEvent.target
+        if (theClickedOnHauler.dataset.variety === "hauler") {
+            const clickedHaulerID = theClickedOnHauler.dataset.id
+            let haulerCountIncrement = 0
             for (const ship of shippingShips) {
                 if (ship.haulerId == clickedHaulerID) {
-                    shipCountIncrement += 1
+                    haulerCountIncrement += 1
                 }
             }
-            window.alert(`This hauler is carrying ${shipCountIncrement} shipping ships`)
+            window.alert(`This hauler is carrying ${haulerCountIncrement} shipping ships`)
         }
     }
 )
