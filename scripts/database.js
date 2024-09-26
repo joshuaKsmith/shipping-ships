@@ -10,7 +10,7 @@ const database = {
         { id: 2, name: "FF Louis", dockId: 2},
         { id: 3, name: "Walter Cronkite", dockId: 3},
         { id: 4, name: "Carla BURNT", dockId: 4},
-        { id: 5, name: "Another Vessel", dockId: 4}
+        { id: 5, name: "Yet Another Vessel", dockId: 4}
     ],
     shippingShips: [
         { id: 1, name: "Stranger", haulerId: 1},
@@ -27,14 +27,32 @@ const database = {
 }
 
 export const getDocks = () => {
-    const constructedDocks = database.docks
+    const constructedDocks = database.docks.toSorted((a, b) => {
+        const nameA = a.location
+        const nameB = b.location
+        if (nameA < nameB) {return -1;}
+        if (nameA > nameB) {return 1;}
+        return 0;
+      });
     return constructedDocks
 }
 export const getHaulingShips = () => {
-    const constructedHaulingShips = database.haulers
+    const constructedHaulingShips = database.haulers.toSorted((a, b) => {
+        const nameA = a.name
+        const nameB = b.name
+        if (nameA < nameB) {return -1;}
+        if (nameA > nameB) {return 1;}
+        return 0;
+      });
     return constructedHaulingShips
 }
 export const getShippingShips = () => {
-    const constructedShippingShips = database.shippingShips
+    const constructedShippingShips = database.shippingShips.toSorted((a, b) => {
+        const nameA = a.name
+        const nameB = b.name
+        if (nameA < nameB) {return -1;}
+        if (nameA > nameB) {return 1;}
+        return 0;
+      });
     return constructedShippingShips
 }
