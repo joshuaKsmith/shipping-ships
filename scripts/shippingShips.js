@@ -9,7 +9,8 @@ document.addEventListener(
     (theClickEvent) => {
         const theClickedOnCargo = theClickEvent.target
         if (theClickedOnCargo.dataset.variety === "cargo") {
-            const clickedCargoHaulerID = theClickedOnCargo.dataset.id
+            debugger
+            const clickedCargoHaulerID = theClickedOnCargo.dataset.haulerFk
             let haulingShip = { name: "Incorrect" }
             for (const ship of haulers) {
                 if (ship.id == clickedCargoHaulerID) {
@@ -24,7 +25,7 @@ document.addEventListener(
 export const ShippingShipList = () => {
     let shippingShipsHTML = "<ul>"
     for (const shippingShip of shippingShips) {
-        shippingShipsHTML += `<li data-name="${shippingShip.name}" data-id="${shippingShip.id}" data-variety="cargo">${shippingShip.name}</li>`
+        shippingShipsHTML += `<li data-name="${shippingShip.name}" data-hauler-fk="${shippingShip.haulerId}" data-variety="cargo">${shippingShip.name}</li>`
     }
     shippingShipsHTML += "</ul>"
     return shippingShipsHTML
