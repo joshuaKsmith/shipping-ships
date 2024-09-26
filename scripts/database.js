@@ -6,10 +6,11 @@ const database = {
         { id: 4, location: "Antwerp, Belgium", volume: "12.04" }
     ],
     haulers: [
-        { id: 1, name: "QQ Nottingham", dockId: 1},
+        { id: 1, name: "QQ Nottingham", dockId: 2},
         { id: 2, name: "FF Louis", dockId: 2},
         { id: 3, name: "Walter Cronkite", dockId: 3},
-        { id: 4, name: "Carla BURNT", dockId: 4}
+        { id: 4, name: "Carla BURNT", dockId: 4},
+        { id: 5, name: "Another Vessel", dockId: 4}
     ],
     shippingShips: [
         { id: 1, name: "Stranger", haulerId: 1},

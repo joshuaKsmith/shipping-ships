@@ -9,7 +9,6 @@ document.addEventListener(
     (theClickEvent) => {
         const theClickedOnCargo = theClickEvent.target
         if (theClickedOnCargo.dataset.variety === "cargo") {
-            debugger
             const clickedCargoHaulerID = theClickedOnCargo.dataset.haulerFk
             let haulingShip = { name: "Incorrect" }
             for (const ship of haulers) {
